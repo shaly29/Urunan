@@ -7,7 +7,7 @@ const TotalUser = () => {
   useEffect(() => {
     const fetchTotalUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:7000/api/v1/users'); // Adjust the URL to match your backend route
+        const response = await axios.get('${process.env.REACT_APP_BACKEND_URL}/api/v1/users'); // Adjust the URL to match your backend route
         setTotalUsers(response.data.totalUsers);
       } catch (error) {
         console.error('Error fetching total users:', error);

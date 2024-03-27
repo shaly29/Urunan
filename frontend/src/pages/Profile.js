@@ -15,7 +15,7 @@ const ProfileUpdate = () => {
     // Fetch user profile data and populate the form
     const fetchUserProfile = async () => {
       try {
-        const response = await axios.get('http://localhost:7000/api/users/profile',{ withCredentials: true });
+        const response = await axios.get('${process.env.REACT_APP_BACKEND_URL}/api/users/profile',{ withCredentials: true });
 
         const { name, email } = response.data;
         setName(name);
@@ -31,7 +31,7 @@ const ProfileUpdate = () => {
   const handleUpdateProfile = async () => {
     try {
       const response = await axios.put(
-        'http://localhost:7000/api/users/profile',
+        '${process.env.REACT_APP_BACKEND_URL}/api/users/profile',
         { name, email, password },
         { withCredentials: true }
       );
@@ -45,7 +45,7 @@ const ProfileUpdate = () => {
 
   const handleLogout=async()=>{
     try {
-      const response = await axios.post('http://localhost:7000/api/users/logout', 
+      const response = await axios.post('${process.env.REACT_APP_BACKEND_URL}/api/users/logout', 
       {}, 
       {withCredentials:true});
       

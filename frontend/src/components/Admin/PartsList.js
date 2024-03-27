@@ -14,7 +14,7 @@ function PartsList() {
 
   const fetchParts = async () => {
     try {
-      const response = await axios.get(`http://localhost:7000/api/v1/admin/parts?page=${currentPage}&perPage=${perPage}`);
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/admin/parts?page=${currentPage}&perPage=${perPage}`);
       setParts(response.data.parts);
     } catch (error) {
       console.error('Error fetching parts:', error);
@@ -23,7 +23,7 @@ function PartsList() {
 
   const deletePart = async (partId) => {
     try {
-      await axios.delete(`http://localhost:7000/api/v1/admin/part/${partId}`);
+      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/v1/admin/part/${partId}`);
       fetchParts();
     } catch (error) {
       console.error('Error deleting part:', error);

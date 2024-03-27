@@ -4,7 +4,7 @@ import{Link} from 'react-router-dom'
 const Logout = () => {
   const handleLogout = async () => {
     try {
-      const response = await fetch('http://localhost:7000/api/v1/users/logout', {
+      const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/api/v1/users/logout', {
         method: 'POST', 
         credentials: 'include', // include cookies in the request
       });

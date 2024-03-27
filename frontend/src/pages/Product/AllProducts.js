@@ -6,7 +6,7 @@ import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import Tooltip from 'rc-tooltip';
 import 'rc-tooltip/assets/bootstrap_white.css'
-// http://localhost:7000/api/v1/products
+
 
 const AllProducts = () => {
 
@@ -30,7 +30,7 @@ const AllProducts = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       const response = await fetch(
-        `http://localhost:7000/api/v1/products`
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/products`
       );
       const data = await response.json();
       setProducts(data.products);

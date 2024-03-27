@@ -83,7 +83,7 @@ const Signup = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:7000/api/v1/signup",
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/signup`,
         {
           ...inputValue,
         },
