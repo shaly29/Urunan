@@ -76,7 +76,7 @@ const ProductList = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('${process.env.REACT_APP_BACKEND_URL}/api/v1/products');
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/products`);
         setProducts(response.data.products);
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -86,7 +86,7 @@ const ProductList = () => {
     fetchProducts();
   }, []);
 
-  
+
   const deleteProduct = async (productId) => {
     try {
       await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/v1/product/${productId}`);
