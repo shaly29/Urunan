@@ -86,6 +86,7 @@ const ProductList = () => {
     fetchProducts();
   }, []);
 
+  
   const deleteProduct = async (productId) => {
     try {
       await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/v1/product/${productId}`);

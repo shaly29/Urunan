@@ -7,7 +7,7 @@ const TotalOrdersComponent = () => {
   useEffect(() => {
     const fetchTotalOrders = async () => {
       try {
-        const response = await axios.get('${process.env.REACT_APP_BACKEND_URL}/api/v1/orders');
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/orders`);
         const { totalAmount, orders } = response.data;
         setTotalOrders(orders.length); // Assuming orders is an array of orders
       } catch (error) {
