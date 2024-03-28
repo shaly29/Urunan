@@ -49,7 +49,7 @@ const AddPart = () => {
       formData.append('icNo', partData.icNo);
       formData.append('image', partData.image);
 
-      const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/api/v1/part/new', {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/part/new`, {
         method: 'POST',
         body: formData
       });
