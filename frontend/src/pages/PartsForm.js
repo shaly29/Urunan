@@ -88,56 +88,68 @@ const AddPart = () => {
                 <span />  You will fill out this form, and we will contact you as soon as. </h4>
             </div>
 
-            <div className="col-lg-8 col-md-10 col-sm-12"> {/* Adjust column size for different screen sizes */}
-  <div className="wrapper my-5" style={{paddingRight:'20px', paddingLeft:'20px'}}> {/* Adjust padding */}
-    {error && <p style={{ color: 'red' }}>{error}</p>}
-    {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
-    <form onSubmit={handleSubmit} className="shadow-lg form">
-      <div className="form-group">
-        <label htmlFor="name_field"> Parts Name:</label>
-        <input type="text" className="form-control" name="name" value={partData.name} onChange={handleChange} required />
-      </div>
-      <div className="form-group">
-        <label>Category:</label>
-        <select name="category" className="form-control" value={partData.category} onChange={handleChange} required>
-          <option value="" >Select category</option>
-          <option value="Repair Part">Only Repair the Parts</option>
-          <option value="Repair Part and re-sell">Repair the parts and sell to the urunan</option>
-        </select>
-      </div>
-      <div className="form-group">
-        <label>Seller Name:</label>
-        <input type="text" className="form-control" name="sellerName" value={partData.sellerName} onChange={handleChange} required />
-      </div>
-      <div className="form-group">
-        <label>Email:</label>
-        <input type="email" className="form-control" name="email" value={partData.email} onChange={handleChange} required />
-      </div>
-      <div className="form-group">
-        <label>Phone Number:</label>
-        <input type="tel" className="form-control" name="phoneNumber" value={partData.phoneNumber} onChange={handleChange} required />
-      </div>
-      <div className="form-group">
-        <label>Address:</label>
-        <input type="text" className="form-control" name="address" value={partData.address} onChange={handleChange} required />
-      </div>
-      <div className="form-group">
-        <label>NIC No:</label>
-        <input type="text" className="form-control" name="icNo" value={partData.icNo} onChange={handleChange} required />
-      </div>
-      <div className="form-group">
-        <label> Product Image:</label>
-        <input type="file" className="form-control" name="image" onChange={handleChange} accept="image/*" required />
-      </div>
-      <div className="form-group">
-        <label>Description:</label>
-        <textarea name="description" className="form-control" value={partData.description} onChange={handleChange} required />
-      </div>
-      <button type="submit" id="view_btn" className="sec-btn btn-block py-3">Submit</button> {/* Make button full width */}
-    </form>
-  </div>
-</div>
+            <div className="col-lg-8 col-md-10 col-sm-12">
 
+              <div className="wrapper my-5"  style={{paddingRight:'70px'}}>
+
+                {/* <h2 >Add New Part</h2> */}
+                {error && <p style={{ color: 'red' }}>{error}</p>}
+                {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+                <form onSubmit={handleSubmit} className="shadow-lg form">
+
+                  <div className="form-group">
+                    <label htmlFor="name_field"> Parts Name:</label>
+                    <input type="text" className="form-control" name="name" value={partData.name} onChange={handleChange} required />
+                  </div>
+
+                  <div className="form-group">
+                    <label>Category:</label>
+                    <select name="category" className="form-control" value={partData.category} onChange={handleChange} required>
+                      <option value="" >Select category</option>
+                      <option value="Repair Part">Only Repair the Parts</option>
+                      <option value="Repair Part and re-sell">Repair the parts and sell to the urunan</option>
+                    </select>
+                  </div>
+
+                  <div className="form-group">
+                    <label>Seller Name:</label>
+                    <input type="text" className="form-control" name="sellerName" value={partData.sellerName} onChange={handleChange} required />
+                  </div>
+
+                  <div className="form-group">
+                    <label>Email:</label>
+                    <input type="email" className="form-control" name="email" value={partData.email} onChange={handleChange} required />
+                  </div>
+
+                  <div className="form-group">
+                    <label>Phone Number:</label>
+                    <input type="tel" className="form-control" name="phoneNumber" value={partData.phoneNumber} onChange={handleChange} required />
+                  </div>
+
+                  <div className="form-group">
+                    <label>Address:</label>
+                    <input type="text" className="form-control" name="address" value={partData.address} onChange={handleChange} required />
+                  </div>
+
+                  <div className="form-group">
+                    <label>NIC No:</label>
+                    <input type="text" className="form-control" name="icNo" value={partData.icNo} onChange={handleChange} required />
+                  </div>
+
+                  <div className="form-group">
+                    <label> Product Image:</label>
+                    <input type="file" className="form-control" name="image" onChange={handleChange} accept="image/*" required />
+                  </div>
+
+                  <div className="form-group">
+                    <label>Description:</label>
+                    <textarea name="description" className="form-control" value={partData.description} onChange={handleChange} required />
+                  </div>
+
+                  <button type="submit" id="view_btn" className="sec-btn  py-3" style={{ margin: '40px 250px 40px ' }}>Submit</button>
+                </form>
+              </div>
+            </div>
             <div className='col-lg-4 ' style={{ marginTop: "300px" }}>
 
               <div className="faq-box">
