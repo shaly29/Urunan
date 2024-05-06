@@ -14,7 +14,7 @@ const OrderList = () => {
 
   const fetchOrders = async () => {
     try {
-      const response = await axios.get('http://localhost:7000/api/v1/order');
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/order`);
       setOrders(response.data.orders);
     } catch (error) {
       console.error('Error fetching orders:', error);
@@ -23,7 +23,7 @@ const OrderList = () => {
 
   const handleDeleteOrder = async (orderId) => {
     try {
-      await axios.delete(`http://localhost:7000/api/v1/order/${orderId}`);
+      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/v1/order/${orderId}`);
       setDeleteSuccess(true);
     } catch (error) {
       console.error('Error deleting order:', error);
@@ -40,7 +40,7 @@ const OrderList = () => {
   const handleUpdateOrder = async () => {
     try {
       // Make a PUT request to update the order
-      await axios.put(`http://localhost:7000/api/v1/order/${editingOrder._id}`, updatedData);
+      await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/v1/order/${editingOrder._id}`, updatedData);
       // Refetch orders to update the list
       fetchOrders();
       // Clear the editingOrder state

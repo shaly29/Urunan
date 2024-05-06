@@ -43,7 +43,7 @@
 //       formData.append('seller', productData.seller);
 //       formData.append('image', productData.image);
 //       formData.append('stock' , productData.stock);
-//       const response = await fetch('http://localhost:7000/api/v1/product/new', {
+//       const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/api/v1/product/new', {
 //         method: 'POST',
 //         body: formData
 //       });
@@ -182,7 +182,7 @@ const ProductForm = () => {
       formData.append('seller', productData.seller);
       formData.append('image', productData.image);
       formData.append('stock', productData.stock);
-      const response = await fetch('http://localhost:7000/api/v1/product/new', {
+      const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/api/v1/product/new', {
         method: 'POST',
         body: formData
       });

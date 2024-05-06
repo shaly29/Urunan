@@ -15,7 +15,7 @@ const UserList = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:7000/api/v1/users');
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/users`);
         setUsers(response.data);
       } catch (error) {
         console.error('Error fetching users:', error);
@@ -27,7 +27,7 @@ const UserList = () => {
 
   const deleteUser = async (userId) => {
     try {
-      await axios.delete(`http://localhost:7000/api/v1/users/${userId}`);
+      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/v1/users/${userId}`);
       setUsers(users.filter(user => user._id !== userId));
     } catch (error) {
       console.error('Error deleting user:', error);
@@ -50,7 +50,7 @@ const UserList = () => {
     e.preventDefault();
     try {
       const updatedUser = { ...editingUser, ...formData };
-      await axios.put(`http://localhost:7000/api/v1/users/${editingUser._id}`, updatedUser);
+      await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/v1/users/${editingUser._id}`, updatedUser);
       setUsers(users.map(user => user._id === editingUser._id ? updatedUser : user));
       setEditingUser(null);
       setFormData({

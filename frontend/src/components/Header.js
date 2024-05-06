@@ -9,7 +9,7 @@ const Header = ({ cartItems }) => {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const response = await fetch(`http://localhost:7000/api/v1/users/${email}`);
+                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/users/${email}`);
                 const data = await response.json();
                 console.log(data)
                 if (data.success) {

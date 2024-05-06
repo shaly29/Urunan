@@ -11,13 +11,13 @@ function AdminHome() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const productsResponse = await axios.get('http://localhost:7000/api/v1/products');
+        const productsResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/products`);
         setTotalProducts(productsResponse.data.products.length);
 
-        const usersResponse = await axios.get('http://localhost:7000/api/v1/users');
+        const usersResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/users`);
         setTotalUsers(usersResponse.data.length);
 
-        const ordersResponse = await axios.get('http://localhost:7000/api/v1/orders');
+        const ordersResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/orders`);
         setTotalOrders(ordersResponse.data.length);
       } catch (error) {
         console.error('Error fetching data:', error);

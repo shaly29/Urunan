@@ -49,7 +49,7 @@ const AddPart = () => {
       formData.append('icNo', partData.icNo);
       formData.append('image', partData.image);
 
-      const response = await fetch('http://localhost:7000/api/v1/part/new', {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/part/new`, {
         method: 'POST',
         body: formData
       });
@@ -88,7 +88,7 @@ const AddPart = () => {
                 <span />  You will fill out this form, and we will contact you as soon as. </h4>
             </div>
 
-            <div className="col-lg-8">
+            <div className="col-lg-8 col-md-10 col-sm-12">
 
               <div className="wrapper my-5"  style={{paddingRight:'70px'}}>
 

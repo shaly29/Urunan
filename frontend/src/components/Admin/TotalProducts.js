@@ -7,7 +7,7 @@ const TotalProducts = () => {
   useEffect(() => {
     const fetchTotalProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:7000/api/v1/products');
+        const response = await axios.get('${process.env.REACT_APP_BACKEND_URL}/api/v1/products');
         const total = response.data.products.length;
         setTotalProducts(total);
       } catch (error) {

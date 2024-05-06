@@ -26,10 +26,14 @@ const HeroSection = () => {
 
 
                                       </p>
-                                    <div className="banner-btn mt-5">
+                                    <div className="banner-btn mt-5  col-md-10 col-sm-12">
+                                      
                                         <a href="partsform" className="sec-btn" style={{ marginRight: '30px' }}>Parts Repair</a>
+                                      
                                         <span />
+                                       
                                         <a href="allproducts" className="sec-btn">View Parts</a>
+                                        
                                     </div>
                                 </div>
                             </div>

@@ -27,7 +27,7 @@ const UpdateProduct = ({ product, onUpdate, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:7000/api/v1/product/${product._id}`, updatedProductData);
+      await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/v1/product/${product._id}`, updatedProductData);
       onUpdate(updatedProductData);
       onClose();
     } catch (error) {
@@ -76,7 +76,7 @@ const ProductList = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:7000/api/v1/products');
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/products`);
         setProducts(response.data.products);
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -86,9 +86,10 @@ const ProductList = () => {
     fetchProducts();
   }, []);
 
+
   const deleteProduct = async (productId) => {
     try {
-      await axios.delete(`http://localhost:7000/api/v1/product/${productId}`);
+      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/v1/product/${productId}`);
       setProducts(products.filter(product => product._id !== productId));
     } catch (error) {
       console.error('Error deleting product:', error);

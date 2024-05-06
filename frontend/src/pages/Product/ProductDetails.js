@@ -17,7 +17,7 @@ export default function ProductDetails({ cartItems, setCartItems }) {
 
     useEffect(() => {
         console.log("Fetching product with ID:", id);
-        fetch("http://localhost:7000/api/v1/product/" + id)
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/product/` + id)
             .then(res => res.json())
             .then(res => {
                 console.log("Product fetched successfully:", res.product);
