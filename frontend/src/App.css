@@ -1769,13 +1769,18 @@ p {
     .dish-box{
         padding: 40px;
     }
-    .form-group{
+    /* .form-group{
         padding: 10px;
-    }
+    } */
     .banner-btn {
         flex-direction: column; /* Stack buttons vertically */
     }
-
+    .form {
+        padding: 10px; /* Reduce padding */
+    }
+    #view_btn {
+        margin: 20px 0; /* Adjust button margin */
+    }
     .banner-btn .sec-btn {
         width: 100%; /* Make buttons full width on smaller screens */
         margin: 10px 0; /* Vertical margin for better spacing */
