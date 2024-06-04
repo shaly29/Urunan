@@ -81,7 +81,7 @@ const AddPart = () => {
     <div>
       <div className='sec-wp'>
         <div className="container">
-          <div className="row ">
+          <div className="row parts">
             <div className='col-lg-12 ' style={{ marginTop: "200PX" }}>
               <h4 className="h4" style={{ color: '#763B45' }}>
                 You can choose whether to sell your parts in their existing condition or to restore them.
@@ -158,7 +158,7 @@ const AddPart = () => {
                 <Link to="/scan"  >
 
 
-                  <a href="scan" className="sec-btn" style={{ margin: '  0 43px 30px', background: "green", color: 'white' }}><i className="uil uil-whatsapp" style={{ color: 'white' }}></i>Chat with us</a>
+                  <a href="scan" className="sec-btn1" style={{ margin: '  0 43px 30px', background: "green", color: 'white' }}><i className="uil uil-whatsapp" style={{ color: 'white' }}></i>Chat with us</a>
                 </Link>
 
                 {/* <Link to={"/scan/"} className='scan-btn ' style={{ margin: ' 0 150px 30px' ,background:"green"}}> </Link> */}

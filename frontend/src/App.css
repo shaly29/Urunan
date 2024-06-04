@@ -555,8 +555,8 @@ p {
 }
 
 .sec-btn {
-    min-width: 120px;
-    min-height: 58px;
+    min-width: 230px;
+    height: 58px;
     background: #f3f3f5;
     box-shadow: 9px 9px 12px #b2b2b3, -9px -9px 12px #ffffff;
     display: inline-flex;
@@ -582,6 +582,33 @@ p {
     color: #0d0d25;
 }
 
+.sec-btn1 {
+    min-width: 120px;
+    min-height: 58px;
+    background: #f3f3f5;
+    box-shadow: 9px 9px 12px #b2b2b3, -9px -9px 12px #ffffff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    color: #0d0d25;
+    text-transform: capitalize;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    outline: none !important;
+    transition: 0.8s cubic-bezier(0.22, 0.78, 0.45, 1.02);
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    padding: 6px 30px;
+}
+
+.sec-btn1:hover {
+    border-color: #777879;
+    box-shadow: inset 9px 9px 12px #cccccc, inset -9px -9px 12px #ffffff;
+    color: #0d0d25;
+}
 /* ******************** */
 
 .brands-row {
@@ -1550,6 +1577,7 @@ p {
     .faq-box p {
         padding: 8px 20px 20px;
     }
+   
     .blog-img {
         height: 240px;
     }
@@ -1719,6 +1747,11 @@ p {
     .dish-box{
         padding: 40px;
     }
+     
+    .form-group{
+        padding: 5px 14px 10px 100px;
+        
+    }
 }
 
 @media (max-width: 767px) {
@@ -1769,15 +1802,14 @@ p {
     .dish-box{
         padding: 40px;
     }
-    /* .form-group{
-        padding: 10px;
-    } */
+     
+    .form-group{
+        padding: 5px 100px 0 100px;
+    }
     .banner-btn {
         flex-direction: column; /* Stack buttons vertically */
     }
-    .form {
-        padding: 10px; /* Reduce padding */
-    }
+   
     #view_btn {
         margin: 20px 0; /* Adjust button margin */
     }
@@ -1785,6 +1817,7 @@ p {
         width: 100%; /* Make buttons full width on smaller screens */
         margin: 10px 0; /* Vertical margin for better spacing */
     }
+   
 }
 
 @media (max-width: 575px) {
@@ -1863,9 +1896,9 @@ p {
     }
    
     .form-group{
-        padding: 5px 100px 0 100px;
+        padding: 5px 100px 0 150px;
     }
-  
+   
 }
 
 @media (max-width: 480px) {
@@ -1907,8 +1940,9 @@ p {
     .dish-box{
         padding: 40px;
     }
+    
     .form-group{
-        padding: 5px 100px;
+        padding: 5px 100px 0 200px;
     }
    
 }
