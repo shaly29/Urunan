@@ -1464,6 +1464,7 @@ p {
     color: #0d0d25;
 }
 
+
 /* **************** responsiveness ***************** */
 
 @media (min-width: 2100px) {
@@ -1771,6 +1772,14 @@ p {
     .form-group{
         padding: 10px;
     }
+    .banner-btn {
+        flex-direction: column; /* Stack buttons vertically */
+    }
+
+    .banner-btn .sec-btn {
+        width: 100%; /* Make buttons full width on smaller screens */
+        margin: 10px 0; /* Vertical margin for better spacing */
+    }
 }
 
 @media (max-width: 575px) {
@@ -1851,6 +1860,7 @@ p {
     .form-group{
         padding: 5px 100px 0 100px;
     }
+  
 }
 
 @media (max-width: 480px) {
@@ -1895,6 +1905,7 @@ p {
     .form-group{
         padding: 5px 100px;
     }
+   
 }
 
 /* parts form */

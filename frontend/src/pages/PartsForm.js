@@ -92,9 +92,9 @@ const AddPart = () => {
 
               <div className="wrapper my-5"  style={{paddingRight:'70px'}}>
 
-                {/* <h2 >Add New Part</h2> */}
+                {/* <h2 >Add New Part</h2>
                 {error && <p style={{ color: 'red' }}>{error}</p>}
-                {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+                {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>} */}
                 <form onSubmit={handleSubmit} className="shadow-lg form">
 
                   <div className="form-group">
