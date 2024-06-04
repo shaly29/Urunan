@@ -58,7 +58,7 @@ const AddPart = () => {
         throw new Error('Failed to add part');
       }
       toast.success("Part added successfully!")
-      setSuccessMessage('Part added successfully!');
+      
       setPartData({
         name: '',
 
