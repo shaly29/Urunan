@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 
 
+
 const AddPart = () => {
   const [partData, setPartData] = useState({
     name: '',
@@ -77,8 +78,14 @@ const AddPart = () => {
     }
   };
 
+   
+     
+    
+
   return (
-    <div>
+    
+      <div>
+  
       <div className='sec-wp'>
         <div className="container">
           <div className="row parts">
@@ -172,6 +179,8 @@ const AddPart = () => {
         </div>
       </div>
     </div>
+    
+   
   );
 };
 

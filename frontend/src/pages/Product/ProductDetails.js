@@ -59,12 +59,9 @@ export default function ProductDetails({ cartItems, setCartItems }) {
     }
 
     function handleReviewSubmit() {
-        // Implement the logic to submit the review
-        // This function will be passed to the ReviewForm component
-        // and called when the user submits the review
+      
         console.log("Submitting review:", { rating, comment });
-        // Add your logic to submit the review data to the server
-        // For now, just close the modal
+      
         setShowReviewModal(false);
     }
 
