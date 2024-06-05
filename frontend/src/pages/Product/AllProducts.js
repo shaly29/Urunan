@@ -137,8 +137,8 @@ const AllProducts = () => {
             <h1 id="products_heading">Latest Products</h1>
             <div className="row">
               {loading ? (
-                <div className="d-flex justify-content-center align-items-center " style={{ height: '100vh' }}>
-                  <Oval color="#763B45" height={80} width={80} />
+                <div className="d-flex justify-content-center align-items-center loader" style={{ height: '40vh' }}>
+                  {/* <Oval color="#763B45" height={80} width={80} /> */}
                 </div> // Loading spinner
               ) : (
                 currentProducts.map(product => (

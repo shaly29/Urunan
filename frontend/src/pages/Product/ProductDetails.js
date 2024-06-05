@@ -81,8 +81,9 @@ export default function ProductDetails({ cartItems, setCartItems }) {
                     <div className="rating-outer">
                         <div className="rating-inner" style={{ width: `${product.ratings / 5 * 100}%` }}></div>
                     </div>
+                   
                     <span id="no_of_reviews">({product.numOfReviews} Reviews)</span>
-
+                    <hr/>
                     <p id="product_price">Rs. {product.price}</p>
                     <hr />
                     <div className="stockCounter d-inline">
