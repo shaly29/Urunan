@@ -81,23 +81,26 @@ const Login = () => {
             onChange={handleOnChange}
           />
         </div>
-        <div className="mb-3">
-          <label htmlFor="password">Password</label>
-          <input
-            type={showPassword ? "text" : "password"}
-            name="password"
-            value={password}
-            placeholder="Enter your password"
-            onChange={handleOnChange}
-          />
-          <button
-            type="button"
-            className="password-toggle-btn"
-            onClick={togglePasswordVisibility}
-          >
-            {/* {showPassword ? <FaEyeSlash /> : <FaEye />} */}
-          </button>
-        </div>
+        <div className="password-input mb-3">
+      <label htmlFor="password">Password</label>
+      <div className="password-input-container">
+        <input
+          type={showPassword ? "text" : "password"}
+          name="password"
+          value={password}
+          placeholder="Enter your password"
+          onChange={handleOnChange}
+          className="password-field"
+        />
+        <button
+          type="button"
+          className="password-toggle-btn"
+          onClick={togglePasswordVisibility}
+        >
+          {showPassword ? <FaEyeSlash /> : <FaEye />}
+        </button>
+      </div>
+    </div>
         <button type="submit">Submit</button>
         <span>
           Already have an account? <Link to={"/signup"}>Signup</Link>

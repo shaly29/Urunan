@@ -42,8 +42,7 @@ const Header = ({ cartItems }) => {
                             <div className="header-logo">
                                 <a href="/">
                                     <img src={require("../assets/images/final.png")} style={{width:"160px",height:"160px",marginLeft:"px"}}/>
-                                    {/* <img src="assets/images/logo.png" width="80" height="80" alt="Urunan" /> */}
-                                    {/* <img src="logo.png" width="160" height="36" alt="Logo"/> */}
+                                  
                                 </a>
                             </div>
                         </div>

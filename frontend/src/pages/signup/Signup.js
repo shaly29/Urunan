@@ -168,25 +168,26 @@ const Signup = () => {
               </span>
             )}
           </div>
-          <div className="mb-3">
+          <div className="mb-3 password-input">
             <label htmlFor="password">Password</label>
-            <div className="password-input">
+            <div className="password-input-container">
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
                 value={password}
                 placeholder="Enter your password"
                 onChange={handleOnChange}
+                className="password-field"
               />
-              <span>
+           
                 <button
                   type="button"
                   className="password-toggle-btn"
                   onClick={togglePasswordVisibility}
                 >
-                  {/* {showPassword ? <FaEye /> : <FaEyeSlash />} */}
+                  {showPassword ? <FaEye /> : <FaEyeSlash />}
                 </button>
-              </span>
+             
             </div>
             {errors.password && (
               <span className="error" style={{ color: "red" }}>

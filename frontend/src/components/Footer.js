@@ -1,6 +1,13 @@
 import React from 'react'
 
 const Footer = () => {
+
+    const scrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
+      };
   return (
    
 //    <div id="js-scroll-content">
@@ -84,7 +91,7 @@ const Footer = () => {
                 <div className="bottom-footer">
                     <div className="container">
                    
-                        <button className="scrolltop"><i className="uil uil-angle-up"></i></button>
+                        <button className="scrolltop" onClick={scrollToTop}><i className="uil uil-angle-up"></i></button>
                     </div>
                 </div>
             </footer>
