@@ -5,7 +5,8 @@ import { useSearchParams } from 'react-router-dom';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import Tooltip from 'rc-tooltip';
-import 'rc-tooltip/assets/bootstrap_white.css'
+import 'rc-tooltip/assets/bootstrap_white.css';
+import { Oval } from 'react-loader-spinner'; // Import the loading spinner
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
@@ -136,7 +137,9 @@ const AllProducts = () => {
             <h1 id="products_heading">Latest Products</h1>
             <div className="row">
               {loading ? (
-                <p>Loading...</p> // Loading message
+                <div className="d-flex justify-content-center align-items-center " style={{ height: '100vh' }}>
+                  <Oval color="#763B45" height={80} width={80} />
+                </div> // Loading spinner
               ) : (
                 currentProducts.map(product => (
                   <ProductCard key={product._id} product={product} />
