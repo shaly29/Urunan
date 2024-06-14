@@ -71,8 +71,9 @@ const Login = () => {
     <div className="form_container" style={{ marginTop: "170px" }}>
       <h2>Login Account</h2>
       <form onSubmit={handleSubmit}>
-        <div className="mb-3">
+        <div className="mb-3 email-input">
           <label htmlFor="email">Email</label>
+          <div className="password-input-container">
           <input
             type="email"
             name="email"
@@ -80,6 +81,7 @@ const Login = () => {
             placeholder="Enter your email"
             onChange={handleOnChange}
           />
+          </div>
         </div>
         <div className="password-input mb-3">
       <label htmlFor="password">Password</label>
