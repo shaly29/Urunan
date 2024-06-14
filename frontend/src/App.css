@@ -1128,10 +1128,10 @@ p {
     color: #0d0d25;
     font-size: 19px;
 }
-/* 
+
 .social-icon ul li a:hover {
-    background: rgb(224, 200, 137);
-} */
+    background: rgb(137, 47, 5);
+}
 
 .social-icon ul li a:hover i {
     color: #ffffff !important;
