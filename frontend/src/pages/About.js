@@ -7,7 +7,7 @@ const About = () => {
 
     return (
         <div>
-            <section className="about-sec section" id="about">
+            <section className="about-sec section" id="about" style={{ marginTop: "170px" }}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
@@ -49,7 +49,9 @@ const About = () => {
                     </div>
                 </div>
             </section>
+            
         </div>
+    
         // </div>
     )
 }
