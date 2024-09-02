@@ -826,7 +826,7 @@ p {
     transition: 0.3s;
     min-height: 76px;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    /* -webkit-line-clamp: 2; */
     -webkit-box-orient: vertical;
     overflow: hidden;
     font-weight: 900;
@@ -1197,7 +1197,7 @@ p {
 .service-box-text p {
     margin: 0;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    /* -webkit-line-clamp: 3; */
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -1350,7 +1350,7 @@ p {
     text-transform: capitalize;
     margin-bottom: 15px;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    /* -webkit-line-clamp: 2; */
     -webkit-box-orient: vertical;
     overflow: hidden;
     font-weight: 900;

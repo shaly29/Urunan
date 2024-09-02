@@ -25,7 +25,6 @@ const createOrder = require("./routes/createOrders");
 const userInfo = require('./routes/userInfo');
 
 
-
 connectDatabase();
 app.use(bodyParser.json());
 app.use(express.json());
