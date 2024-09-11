@@ -12,9 +12,9 @@ function AdminHome() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const productsResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/products`);
+        const productsResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/products`
+        );
         setTotalProducts(productsResponse.data.products.length);
-
         const usersResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/users`);
         setTotalUsers(usersResponse.data.length);
 
