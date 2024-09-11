@@ -24,7 +24,7 @@ import Shipping from './pages/cart/Shipping';
 import ProductForm from './components/Admin/ProductForm';
 import ProductList from './components/Admin/ProductList';
 import Scan from './Scan';
-import Blog from './pages/Blog';
+
 import About from './pages/About';
 import ContactForm from './pages/Contact';
 
@@ -76,7 +76,6 @@ function App() {
          <Route path='/contact' element={<ContactForm/>}/>
          <Route path='/productreview' element={<ProductReview/>}/>
          <Route path='/userorders' element={<UserOrders/>} />
-        {/* <Route path="/admin/*" element={<AdminRoutes><AdminApp/></AdminRoutes>} /> */}
         <Route path="/admin/" element={<AdminApp />} />
         <Route path='/admin/productlist' element={<ProductList />} />
         <Route path='/admin/users' element={<User />} />

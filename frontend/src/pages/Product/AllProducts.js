@@ -26,11 +26,13 @@ const AllProducts = () => {
     'Plusure'
   ];
 
+  
   useEffect(() => {
     const fetchProducts = async () => {
       setLoading(true); // Set loading to true when starting fetch
       const response = await fetch(
         `${process.env.REACT_APP_BACKEND_URL}/api/v1/products`
+        
       );
       const data = await response.json();
       setProducts(data.products);
