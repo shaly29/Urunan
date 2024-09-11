@@ -17,7 +17,7 @@ export default function ProductDetails({ cartItems, setCartItems }) {
 
     useEffect(() => {
         console.log("Fetching product with ID:", id);
-        fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/product/` + id)
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/product/${id}`)
             .then(res => res.json())
             .then(res => {
                 console.log("Product fetched successfully:", res.product);
@@ -29,24 +29,31 @@ export default function ProductDetails({ cartItems, setCartItems }) {
     }, [id]);
 
     function addToCart() {
-        const itemExist = cartItems.find((item) => item.product._id === product._id);
-
         if (!email) {
             toast.error("Please login to add items to the cart.");
             navigate('/login');
             return;
         }
 
+        if (!product) {
+            toast.error("Product information is missing.");
+            return;
+        }
+
+        const itemExist = cartItems.find((item) => item.product._id === product._id);
+
         if (!itemExist) {
             const newItem = { product, qty };
             setCartItems((state) => [...state, newItem]);
             toast.success("Cart Item added successfully!");
-            navigate('/cart')
+            navigate('/cart');
+        } else {
+            toast.info("Item already exists in the cart.");
         }
     }
 
     function increaseQty() {
-        if (product.stock == qty) {
+        if (product.stock === qty) {
             return;
         }
         setQty((state) => state + 1);
@@ -59,17 +66,15 @@ export default function ProductDetails({ cartItems, setCartItems }) {
     }
 
     function handleReviewSubmit() {
-      
         console.log("Submitting review:", { rating, comment });
-      
         setShowReviewModal(false);
     }
 
     return product && (
         <div className="container container-fluid my-3">
             <div className="row f-flex justify-content-around details">
-                <div className="col-12 col-lg-5 img-fluid " id="product_image" >
-                    <img src={product.image ? product.image.url : "product"} alt="sdf" height="500" width="500" />
+                <div className="col-12 col-lg-5 img-fluid" id="product_image">
+                    <img src={product.image ? product.image.url : "product"} alt={product.name} height="500" width="500" />
                 </div>
 
                 <div className="col-12 col-lg-5 mt-5 dish-box">
@@ -81,9 +86,9 @@ export default function ProductDetails({ cartItems, setCartItems }) {
                     <div className="rating-outer">
                         <div className="rating-inner" style={{ width: `${product.ratings / 5 * 100}%` }}></div>
                     </div>
-                   
+
                     <span id="no_of_reviews">({product.numOfReviews} Reviews)</span>
-                    <hr/>
+                    <hr />
                     <p id="product_price">Rs. {product.price}</p>
                     <hr />
                     <div className="stockCounter d-inline">
@@ -103,7 +108,7 @@ export default function ProductDetails({ cartItems, setCartItems }) {
                     <button
                         type="button"
                         onClick={addToCart}
-                        disabled={product.stock == 0 ? true : false}
+                        disabled={product.stock === 0}
                         id="cart_btn"
                         className="btn btn-primary1 d-inline ml-4">Add to Cart</button>
 
