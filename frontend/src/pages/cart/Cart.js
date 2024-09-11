@@ -119,7 +119,7 @@ export default function Cart({ cartItems, setCartItems }) {
                 ...formData,
                 userId: userId,
             };
-            const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/api/v1/create-order', {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/create-order`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
