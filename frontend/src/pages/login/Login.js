@@ -22,11 +22,9 @@ const Login = () => {
     });
   };
 
-  const handleError = (err) =>
-    toast.error(err, {});
+  const handleError = (err) => toast.error(err);
 
-  const handleSuccess = (msg) =>
-    toast.success(msg, {});
+  const handleSuccess = (msg) => toast.success(msg);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,17 +34,14 @@ const Login = () => {
         { ...inputValue },
         { withCredentials: true }
       );
-      const { success, message, role } = data;
-      console.log(success)
-      console.log(inputValue)
+      const { success, message } = data;
       if (success) {
         handleSuccess(message);
         if (inputValue.email) {
-          console.log(inputValue)
           localStorage.setItem('email', inputValue.email);
         }
         setTimeout(() => {
-          window.location = "/";
+          navigate("/");
         }, 1000);
       } else {
         handleError(message);
@@ -73,7 +68,6 @@ const Login = () => {
       <form onSubmit={handleSubmit}>
         <div className="mb-3 email-input">
           <label htmlFor="email">Email</label>
-          <div className="password-input-container">
           <input
             type="email"
             name="email"
@@ -81,28 +75,27 @@ const Login = () => {
             placeholder="Enter your email"
             onChange={handleOnChange}
           />
-          </div>
         </div>
         <div className="password-input mb-3">
-      <label htmlFor="password">Password</label>
-      <div className="password-input-container">
-        <input
-          type={showPassword ? "text" : "password"}
-          name="password"
-          value={password}
-          placeholder="Enter your password"
-          onChange={handleOnChange}
-          className="password-field"
-        />
-        <button
-          type="button"
-          className="password-toggle-btn"
-          onClick={togglePasswordVisibility}
-        >
-          {showPassword ? <FaEyeSlash /> : <FaEye />}
-        </button>
-      </div>
-    </div>
+          <label htmlFor="password">Password</label>
+          <div className="password-input-container">
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              value={password}
+              placeholder="Enter your password"
+              onChange={handleOnChange}
+              className="password-field"
+            />
+            <button
+              type="button"
+              className="password-toggle-btn"
+              onClick={togglePasswordVisibility}
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </button>
+          </div>
+        </div>
         <button type="submit">Submit</button>
         <span>
           Already have an account? <Link to={"/signup"}>Signup</Link>
